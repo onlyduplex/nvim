@@ -9,7 +9,18 @@ return require('packer').startup(function(use)
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
-  use 'nvim-treesitter/nvim-treesitter'
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('nvim-treesitter/playground')
+  use('mbbill/undotree')
+  use('tpope/vim-fugitive')
+  use({ 
+	  'rebelot/kanagawa.nvim',
+	  as = 'kanagawa',
+	  config = function()
+		  vim.cmd('colorscheme kanagawa')
+	end
+})
+	use('ThePrimeagen/harpoon')
 
 
 end)
