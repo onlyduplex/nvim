@@ -1,4 +1,10 @@
 require("arch.remap")
-vim.opt.number = true        -- show absolute line number for the current line
-vim.opt.relativenumber = true -- show relative numbers for all other lines
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+-- Script to copy to clipboard
+vim.opt.clipboard:append("unnamedplus")
+vim.keymap.set("v", "Y", '"+y', { noremap = true, silent = true })
+
+
 
